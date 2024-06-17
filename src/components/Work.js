@@ -42,7 +42,7 @@ const Work = () => {
               </div>
               {/* title */}
               <div className='absolute bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Event Organising Portal</span>
+                <span className='text-3xl text-white'><a href="https://github.com/Mangai-23/Event_Organising_Portal">Event Organising Portal</a></span>
               </div>
             </div>
           </motion.div>
@@ -65,7 +65,7 @@ const Work = () => {
               </div>
               {/* title */}
               <div className='absolute bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50'>
-                <span className='text-3xl text-white'>LinkList</span>
+                <span className='text-3xl text-white'><a href="https://github.com/Mangai-23/LinkList">LinkList</a></span>
               </div>
             </div>
           </motion.div>
@@ -88,7 +88,7 @@ const Work = () => {
               </div>
               {/* title */}
               <div className='absolute bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50'>
-                <span className='text-3xl text-white'>Net Profit Margin Calc</span>
+                <span className='text-3xl text-white'><a href="https://github.com/Mangai-23/Net-Profit-Margin-Calculator">Net Profit Margin Calc</a></span>
               </div>
             </div>
           </motion.div>

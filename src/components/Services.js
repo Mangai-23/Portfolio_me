@@ -54,7 +54,7 @@ const Services = () => {
                     className='progress bg-gradient-to-r from-blue-500 to-purple-600 h-6 rounded-full'
                     initial={{ width: 0 }}
                     animate={{ width: skill.level }}
-                    transition={{ duration: 2.0 }}
+                    transition={{ duration: 10.0 }}
                   >
                     {/* <span className='progress-text text-white text-base font-bold ml-2'>{skill.level}</span> */}
                   </motion.div>
