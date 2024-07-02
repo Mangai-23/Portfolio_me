@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 import { IoCall, IoLocationSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const recipient = 'mangaisuresh2923@gmail.com';
+    const subject = `Mail from ${formData.name}`;
+    const body = `Sender Email: ${formData.email}\n\n${formData.message}`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&tf=1`;
+    // Open the Gmail compose window in a new tab
+    window.open(gmailLink, '_blank');
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   return (
     <section id='contact' className='py-16 lg:section'>
       <div className='container mx-auto'>
@@ -35,9 +58,6 @@ const Contact = () => {
                   <a href="/" className='text-[20px] mx-4 mt-2'>Tirunelveli, India</a>      
                 </div>
               </div>
-            {/* <a href="https://github.com/Mangai-23" >
-                  <FaGithub className='pb-4 w-10 h-10 mt-2'/>
-                </a> */}
             </div>
           </motion.div>
           {/* form */}
@@ -47,17 +67,40 @@ const Contact = () => {
             whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
             className='flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start'>
-            <input className='bg-transparent border-b py-3 outline-none placeholder:text-white focus:border-accent transition-all' type="text" placeholder='Your name' />
-            <input className='bg-transparent border-b py-3 outline-none placeholder:text-white focus:border-accent transition-all' type="email" placeholder='Your email' />
-            <textarea className='bg-transparent border-b py-10 outline-none placeholder:text-white focus:border-accent transition-all 
-            resize-none mb-10
-            'placeholder='Your message'
-            ></textarea>
-            <button className='btn btn-lg'>Send message</button>
+            <form onSubmit={handleSubmit} className='flex flex-col gap-y-6 w-full'>
+              <input
+                className='bg-transparent border-b py-3 outline-none placeholder:text-white focus:border-accent transition-all'
+                type="text"
+                name="name"
+                placeholder='Your name'
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <input
+                className='bg-transparent border-b py-3 outline-none placeholder:text-white focus:border-accent transition-all'
+                type="email"
+                name="email"
+                placeholder='Your email'
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <textarea
+                className='bg-transparent border-b py-10 outline-none placeholder:text-white focus:border-accent transition-all resize-none mb-10'
+                name="message"
+                placeholder='Your message'
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+              <button type="submit" className='btn btn-lg'>Send message</button>
+            </form>
           </motion.div>
         </div>
       </div>
-    </section>);
+    </section>
+  );
 };
 
 export default Contact;

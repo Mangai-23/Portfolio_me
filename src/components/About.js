@@ -3,7 +3,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
-import resume from '../assets/Mangai-Resume.pdf'
+import resume from '../assets/Final_Resume.pdf'; 
 const About = () => { 
   const [ref, inView] = useInView({
     threshold: 0.5,
