@@ -3,6 +3,7 @@ import React from 'react';
 import Image from '../assets/avatar.svg'
 // Icons
 import { FaGithub,FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 // Type animation
 import { TypeAnimation } from 'react-type-animation'
 // motion
@@ -31,7 +32,7 @@ const Banner = () => {
             className='my-6 text-[36px] lg:text-[60px] font-semibold uppercase leading-[1]'>
             <span className='mr-4 text-white'>I am a</span>
             <TypeAnimation
-              sequence={['Developer', 2000, 'Designer', 2000]}
+              sequence={['Developer', 2000, 'Team Worker', 2000]}
               speed={50}
               className='text-accent'
               repeat={Infinity}
@@ -73,6 +74,9 @@ const Banner = () => {
             </a>
             <a href="https://www.instagram.com/mangai9575/?hl=en">
             <FaInstagram />
+            </a>
+            <a href="https://leetcode.com/u/Mangayarkarasi/">
+              <SiLeetcode />
             </a>
           </motion.div>
         </div>
